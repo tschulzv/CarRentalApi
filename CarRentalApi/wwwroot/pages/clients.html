@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <title>Gestión de Clientes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-blue" data-bs-theme="dark">
+      <div class="container-fluid">
+        <img class="nav-logo bg-blue" src="../assets/logo.png" alt="rent&go"/>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="./index.html">Inicio</a>
+            <a class="nav-link" href="./rent.html">Préstamos</a>
+            <a class="nav-link active" aria-current="page" href="./clients.html">Clientes</a>
+            <a class="nav-link admin-only" href="./users.html">Usuarios</a>
+          </div>
+        </div>
+        <button class="btn btn-light" onclick="logout()">Cerrar sesión</button>
+      </div>
+    </nav>
+
+    <div class="content" id="main-content">
+        <div class="container">
+          <h1 class="title-font">Clientes</h1>
+          <button type="button" class="btn bg-blue" data-bs-toggle="modal" data-bs-target="#clientModal">Nuevo Cliente</button>
+          <div id="client-list"></div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="clientModal" tabindex="-1" aria-labelledby="clientModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="rentModalLabel">Cliente</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="nameTxt" class="col-form-label">Nombre</label>
+                      <input type="text" class="form-control" id="nameTxt" maxlength="50"></input>
+                      <p id="name-error" class="errorMsg">Nombre  inválido</p>
+                    </div>
+                    <div class="mb-3">
+                      <label for="emailTxt" class="col-form-label">Email</label>
+                      <input type="email" class="form-control" id="emailTxt"></input>
+                      <p id="email-error" class="errorMsg">Email  inválido</p>
+                    </div>
+                    <div class="mb-3">
+                      <label for="phoneTxt" class="col-form-label">Teléfono</label>
+                      <input type="phone" class="form-control" id="phoneTxt"></input>
+                      <p id="phone-error" class="errorMsg">Teléfono inválido</p>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer" id="clientModalFooter">
+
+                </div>
+                <div id="message"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/classes/Client.class.js"></script>
+    <script src="../js/pages/clients.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

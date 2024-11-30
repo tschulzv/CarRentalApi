@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../css/style.css" rel="stylesheet">
+      <title>Gestión de Alquiler</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-blue" data-bs-theme="dark">
+      <div class="container-fluid">
+        <img class="nav-logo bg-blue" src="../assets/logo.png" alt="rent&go"/>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="./index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="./rent.html">Préstamos</a>
+            <a class="nav-link" href="./clients.html">Clientes</a>
+            <a class="nav-link admin-only" href="./users.html">Usuarios</a>
+          </div>
+        </div>
+        <button class="btn btn-light" onclick="logout()">Cerrar sesión</button>
+      </div>
+    </nav>
+
+      <div class="content" id="main-content">
+          <div class="container">
+            <h1 class="title-font">Informe de Préstamos</h1>
+            <div class="row pd-1">
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-danger" onclick="filterExpired()">Filtrar Vencidos</button>
+                </div>
+                <div class="col-md-8">
+                  <form onsubmit="filterByDate(event)">
+                    <h5>Filtrar por fecha</h5>
+                    <label for="start-date">Desde</label>
+                    <input type="date" id="input-start-date"/>
+                    <label for="start-date">Hasta</label>
+                    <input type="date" id="input-end-date"/>
+                    <button type="input" class="btn bg-blue">Buscar</button>
+                  </form>
+                </div>
+                <div class="col-md-2">
+                  <button type="button" class="btn bg-blue" onclick="showRentedVehicles()">Borrar filtros</button>
+                </div>
+            </div>
+            <div class="container p-2">
+              <h4 id="filter-title"></h4>
+              <div id="rent-list"></div>
+            </div>
+          </div>
+      </div>
+      
+      <script src="../js/utils.js"></script>
+      <script src="../js/classes/Client.class.js"></script>
+      <script src="../js/classes/Vehicle.class.js"></script>
+      <script src="../js/classes/Rent.class.js"></script>
+      <script src="../js/pages/rent.js"></script>
+      <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

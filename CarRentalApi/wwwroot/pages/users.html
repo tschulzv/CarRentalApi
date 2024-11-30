@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <title>Gestión de Usuarios</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-blue" data-bs-theme="dark">
+      <div class="container-fluid">
+        <img class="nav-logo bg-blue" src="../assets/logo.png" alt="rent&go"/>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="./index.html">Inicio</a>
+            <a class="nav-link" href="./rent.html">Préstamos</a>
+            <a class="nav-link" href="./clients.html">Clientes</a>
+            <a class="nav-link admin-only active" aria-current="page" href="./users.html">Usuarios</a>
+          </div>
+        </div>
+        <button class="btn btn-light" onclick="logout()">Cerrar sesión</button>
+      </div>
+    </nav>
+
+    <div class="content" id="main-content">
+        <div class="admin-only container">
+          <h1 class="title-font">Usuarios del Sistema</h1>
+          <div id="user-list"></div>
+
+        </div>
+    </div>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/pages/users.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
